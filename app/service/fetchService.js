@@ -15,3 +15,14 @@ export async function fetchPokemonImg(URL) {
   const img = data.sprites.front_default;
   return img;
 }
+
+export async function fetchEvolutionChain(URL) {
+  const resp = await fetch(URL);
+  const data = await resp.json();
+  console.log(data);
+  const evoURL = data.evolution_chain.url;
+  const evoResp = await fetch(evoURL);
+  const evoData = await evoResp.json();
+
+  return evoData;
+}

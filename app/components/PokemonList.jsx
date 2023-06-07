@@ -8,9 +8,10 @@ export default function PokemonList({ pokeData }) {
 
   async function handlePokeClick(event) {
     const { value } = event.target.attributes.value;
-    navigate(`/pokeinfo/?q=${value}`);
+    navigate(`/pokeinfo/?q=${pokeData[value].name}`, {
+      state: { pokemon: pokeData[value] },
+    });
   }
-  console.log(pokeData);
   return (
     <div className="poke-list-wrapper">
       {pokeData &&
@@ -25,7 +26,7 @@ export default function PokemonList({ pokeData }) {
               />
               <p
                 className="poke-list-name"
-                value={pokemon.name}
+                value={index}
                 onClick={handlePokeClick}
               >
                 {capitalizeWord(pokemon.name)}

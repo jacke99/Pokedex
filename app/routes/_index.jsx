@@ -32,8 +32,8 @@ export default function Index() {
   }, [data]);
 
   useEffect(() => {
-    console.log(loadNewPokemons);
     if (loadNewPokemons) {
+      console.log(loadNewPokemons);
       Promise.all(
         loadNewPokemons.results?.map((pokemon) => fetchPokemonInfo(pokemon.url))
       ).then((response) => setPokeData(response));

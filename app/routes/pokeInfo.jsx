@@ -1,6 +1,9 @@
 import { json } from "@remix-run/node";
-import { useLoaderData, useNavigate } from "@remix-run/react";
-import PokemonCard from "~/components/PokemonCard";
+import { useLoaderData, useLocation, useNavigate } from "@remix-run/react";
+import { useEffect, useState } from "react";
+import PokemonBaseInfo from "~/components/PokemonBaseInfo";
+import PokemonEvolution from "~/components/PokemonEvolution";
+import { capitalizeWord } from "~/service/capitalizeService";
 import { fetchPokemonInfo } from "~/service/fetchService";
 
 export async function loader({ request }) {
@@ -14,16 +17,23 @@ export async function loader({ request }) {
 }
 
 export default function PokeInfo() {
-  const pokeData = useLoaderData();
+  const pokemon = useLoaderData();
   const navigate = useNavigate();
 
   function handleReturnClick() {
     navigate("/");
   }
   return (
-    <div>
-      <button onClick={handleReturnClick}>Return</button>
-      <PokemonCard pokemonInfo={pokeData} />
-    </div>
+    <>
+      <div>
+        <button onClick={handleReturnClick}>Return</button>
+        <div className="pokemon-container">
+          <img src={pokemon.sprites.front_default} alt="Pokemon" />
+          <h2 className="pokemon-name">{capitalizeWord(pokemon.name)}</h2>
+          <PokemonBaseInfo pokemon={pokemon} />
+          <PokemonEvolution pokemon={pokemon} />
+        </div>
+      </div>
+    </>
   );
 }
