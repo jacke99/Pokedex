@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.poke-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.poke-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(27, 100, 235);
+  width: 10em;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.poke-list-img {
+  width: 70%;
+}
+
+.poke-list-name {
+  font-size: 1.4em;
+  color: #fff;
+  padding: 0.5em;
+}
+
+.fire {
+  background-color: red;
+}
+
+.water {
+  background-color: aqua;
+}
+
+.grass {
+  background-color: greenyellow;
+}
+
+.bug {
+  background-color: burlywood;
+}
+
+.normal {
+  background-color: rgb(193, 206, 13);
+}

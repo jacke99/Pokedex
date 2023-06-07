@@ -1,0 +1,17 @@
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.next-btn,
+.previous-btn {
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  border-radius: 0.8em;
+}
+
+.current-page {
+  margin: 0 0.6em;
+}
