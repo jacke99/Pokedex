@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(27, 100, 235);
   width: 10em;
   border-radius: 1em;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -31,50 +30,4 @@
   font-size: 1.4em;
   color: #fff;
   padding: 0.5em;
-}
-
-.fire {
-  background-color: rgb(211, 13, 13);
-}
-
-.water {
-  background-color: rgb(5, 123, 190);
-}
-
-.grass {
-  background-color: rgb(50, 196, 6);
-}
-
-.poison {
-  background-color: rgb(151, 252, 0);
-}
-
-.bug,
-.ground {
-  background-color: burlywood;
-}
-
-.normal,
-.electric {
-  background-color: rgb(193, 206, 13);
-}
-
-.ghost,
-.psychic {
-  background-color: #b1afaf;
-}
-
-.fairy {
-  background-color: lightpink;
-}
-
-.fighting {
-  background-color: rgb(146, 83, 41);
-}
-
-.rock {
-  background-color: #474747;
-}
-
-.dark {
 }

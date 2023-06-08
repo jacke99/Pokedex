@@ -10,11 +10,17 @@ import {
 } from "@remix-run/react";
 import Header from "./components/Header";
 import headerStyles from "~/styles/header.css";
+import pokeColors from "~/styles/pokeColors.css";
+import font from "~/styles/font.css";
 
 export const links = () => [
   ...(cssBundleHref
     ? [{ rel: "stylesheet", href: cssBundleHref }]
-    : [{ rel: "stylesheet", href: headerStyles }]),
+    : [
+        { rel: "stylesheet", href: headerStyles },
+        { rel: "stylesheet", href: pokeColors },
+        { rel: "stylesheet", href: font },
+      ]),
 ];
 
 export default function App() {

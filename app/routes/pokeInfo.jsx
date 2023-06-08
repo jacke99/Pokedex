@@ -1,10 +1,9 @@
 import { json } from "@remix-run/node";
-import { useLoaderData, useLocation, useNavigate } from "@remix-run/react";
-import { useEffect, useState } from "react";
-import PokemonBaseInfo from "~/components/PokemonBaseInfo";
-import PokemonEvolution from "~/components/PokemonEvolution";
-import { capitalizeWord } from "~/service/capitalizeService";
+import { useLoaderData } from "@remix-run/react";
+import PokeInfoCarousel from "~/components/PokeInfoCarousel";
+import PokeInfoTop from "~/components/PokeInfoTop";
 import { fetchPokemonInfo } from "~/service/fetchService";
+import styles from "~/styles/pokeInfo.css";
 
 export async function loader({ request }) {
   const url = new URL(request.url);
@@ -18,22 +17,15 @@ export async function loader({ request }) {
 
 export default function PokeInfo() {
   const pokemon = useLoaderData();
-  const navigate = useNavigate();
-
-  function handleReturnClick() {
-    navigate("/");
-  }
+  const pokeWrapperClass = `pokemon-info-wrapper ${pokemon.types[0].type.name}`;
   return (
-    <>
-      <div>
-        <button onClick={handleReturnClick}>Return</button>
-        <div className="pokemon-container">
-          <img src={pokemon.sprites.front_default} alt="Pokemon" />
-          <h2 className="pokemon-name">{capitalizeWord(pokemon.name)}</h2>
-          <PokemonBaseInfo pokemon={pokemon} />
-          <PokemonEvolution pokemon={pokemon} />
-        </div>
-      </div>
-    </>
+    <div className={pokeWrapperClass}>
+      <PokeInfoTop pokemon={pokemon} />
+      <PokeInfoCarousel pokemon={pokemon} />
+    </div>
   );
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
 }

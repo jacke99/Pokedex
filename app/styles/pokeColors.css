@@ -1,0 +1,50 @@
+.fire {
+  background-color: rgb(211, 13, 13);
+}
+
+.water {
+  background-color: rgb(5, 123, 190);
+}
+
+.grass {
+  background-color: rgb(50, 196, 6);
+}
+
+.poison {
+  background-color: rgb(151, 252, 0);
+}
+
+.bug,
+.ground {
+  background-color: burlywood;
+}
+
+.normal,
+.electric {
+  background-color: rgb(193, 206, 13);
+}
+
+.ghost,
+.psychic {
+  background-color: #b1afaf;
+}
+
+.fairy {
+  background-color: lightpink;
+}
+
+.fighting {
+  background-color: rgb(146, 83, 41);
+}
+
+.rock {
+  background-color: #474747;
+}
+
+.dark {
+  background-color: purple;
+}
+
+.ice {
+  background-color: rgb(4, 129, 202);
+}
