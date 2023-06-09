@@ -3,9 +3,8 @@ import PokemonBaseInfo from "./PokemonBaseInfo";
 import PokemonEvolution from "./PokemonEvolution";
 import PokemonStats from "./PokemonStats";
 
-export default function PokeInfoCarousel({ pokemon }) {
+export default function PokeInfoCarousel({ pokemon, pokemonEvo, speciesData }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  console.log(activeIndex);
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = 0;
@@ -28,20 +27,19 @@ export default function PokeInfoCarousel({ pokemon }) {
             Stats
           </li>
         </ul>
+        <div
+          className="nav-slider"
+          style={{ transform: `translate(${activeIndex * 245}%)` }}
+        ></div>
       </div>
       <div
         className="inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        <PokemonBaseInfo pokemon={pokemon} />
-        <PokemonEvolution pokemon={pokemon} />
-        <PokemonStats pokemon={pokemon} />
+        <PokemonBaseInfo pokemon={pokemon} speciesData={speciesData} />
+        <PokemonEvolution pokemonEvo={pokemonEvo} />
+        <PokemonStats pokemon={pokemon} activeIndex={activeIndex} />
       </div>
-      {/* <div className="carousel-buttons">
-        <button onClick={() => updateIndex(activeIndex - 1)}>left</button>
-
-        <button onClick={() => updateIndex(activeIndex + 1)}>right</button>
-      </div> */}
     </div>
   );
 }

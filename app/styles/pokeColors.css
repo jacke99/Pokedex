@@ -37,7 +37,8 @@
   background-color: rgb(146, 83, 41);
 }
 
-.rock {
+.rock,
+.steel {
   background-color: #474747;
 }
 

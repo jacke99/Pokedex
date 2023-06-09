@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchPokemonInfo } from "~/service/fetchService";
 
 export default function ChangePage({ data, setLoadNewPokemons }) {
@@ -11,7 +11,6 @@ export default function ChangePage({ data, setLoadNewPokemons }) {
     setNextPage(data.next);
     setPreviousPage(data.previous);
     setNumberOfPages(Math.floor(data.count / 20) + 1);
-    console.log(data);
   }, [data]);
 
   async function handlePrevClick() {

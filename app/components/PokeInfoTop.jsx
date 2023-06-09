@@ -10,7 +10,9 @@ export default function PokeInfoTop({ pokemon }) {
 
   return (
     <div className="poke-info-top">
-      <button onClick={handleReturnClick}>Return</button>
+      <button className="poke-return-btn" onClick={handleReturnClick}>
+        Return
+      </button>
 
       <img
         className="pokemon-info-img"

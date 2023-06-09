@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 import PokemonList from "~/components/PokemonList";
 import styles from "~/styles/index.css";
 import buttonStyles from "~/styles/changePage.css";
-
 import { fetchPokemonInfo, fetchPokemons } from "~/service/fetchService";
 import ChangePage from "~/components/ChangePage";
 
 export const meta = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Pokedex" },
+    { name: "description", content: "Welcome to Pokedex!" },
   ];
 };
 
@@ -29,15 +28,16 @@ export default function Index() {
     Promise.all(
       data.results?.map((pokemon) => fetchPokemonInfo(pokemon.url))
     ).then((response) => setPokeData(response));
+    window.scrollTo(0, 0);
   }, [data]);
 
   useEffect(() => {
     if (loadNewPokemons) {
-      console.log(loadNewPokemons);
       Promise.all(
         loadNewPokemons.results?.map((pokemon) => fetchPokemonInfo(pokemon.url))
       ).then((response) => setPokeData(response));
     }
+    window.scrollTo(0, 0);
   }, [loadNewPokemons]);
 
   return (

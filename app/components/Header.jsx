@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
       <h1 className="header-title">Pokedex</h1>
-      <Form>
+      <Form method="POST" className="search-form">
         <input className="search-field" type="text" placeholder="Search..." />
         <button type="submit"></button>
       </Form>

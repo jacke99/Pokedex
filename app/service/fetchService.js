@@ -18,11 +18,11 @@ export async function fetchPokemonImg(URL) {
 
 export async function fetchEvolutionChain(URL) {
   const resp = await fetch(URL);
-  const data = await resp.json();
-  console.log(data);
-  const evoURL = data.evolution_chain.url;
+  const speciesData = await resp.json();
+  console.log(speciesData);
+  const evoURL = speciesData.evolution_chain.url;
   const evoResp = await fetch(evoURL);
   const evoData = await evoResp.json();
 
-  return evoData;
+  return { evoData, speciesData };
 }

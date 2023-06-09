@@ -24,10 +24,12 @@
 
 .poke-list-img {
   width: 70%;
+  pointer-events: none;
 }
 
 .poke-list-name {
   font-size: 1.4em;
   color: #fff;
   padding: 0.5em;
+  pointer-events: none;
 }
