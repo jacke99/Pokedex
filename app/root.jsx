@@ -12,6 +12,8 @@ import Header from "./components/Header";
 import headerStyles from "~/styles/header.css";
 import pokeColors from "~/styles/pokeColors.css";
 import font from "~/styles/font.css";
+import NavBottom from "./components/NavBottom";
+import bottomNav from "~/styles/bottomNav.css";
 
 export const links = () => [
   ...(cssBundleHref
@@ -20,6 +22,7 @@ export const links = () => [
         { rel: "stylesheet", href: headerStyles },
         { rel: "stylesheet", href: pokeColors },
         { rel: "stylesheet", href: font },
+        { rel: "stylesheet", href: bottomNav },
       ]),
 ];
 
@@ -35,6 +38,7 @@ export default function App() {
       <body>
         <Header />
         <Outlet />
+        <NavBottom />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

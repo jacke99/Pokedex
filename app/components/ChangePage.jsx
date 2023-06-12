@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchPokemonInfo } from "~/service/fetchService";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function ChangePage({ data, setLoadNewPokemons }) {
   const [nextPage, setNextPage] = useState(null);
@@ -36,7 +38,7 @@ export default function ChangePage({ data, setLoadNewPokemons }) {
         disabled={!previousPage}
         className="previous-btn"
       >
-        Previous
+        <FontAwesomeIcon icon={faArrowLeft} />
       </button>
       <div className="current-page">{`${currentPage} / ${numberOfPages}`}</div>
       <button
@@ -44,7 +46,7 @@ export default function ChangePage({ data, setLoadNewPokemons }) {
         disabled={!nextPage}
         className="next-btn"
       >
-        Next
+        <FontAwesomeIcon icon={faArrowRight} />
       </button>
     </div>
   );

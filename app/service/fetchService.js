@@ -3,6 +3,11 @@ export async function fetchPokemons() {
   const data = await resp.json();
   return data;
 }
+export async function fetchAllPokemons() {
+  const resp = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=20");
+  const data = await resp.json();
+  return data;
+}
 export async function fetchPokemonInfo(URL) {
   const resp = await fetch(URL);
   const data = await resp.json();

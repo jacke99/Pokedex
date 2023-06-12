@@ -21,3 +21,16 @@ header {
   border: 1px solid black;
   border-radius: 1em;
 }
+
+.search-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.search-bar-icon {
+  position: absolute;
+  right: 1em;
+}

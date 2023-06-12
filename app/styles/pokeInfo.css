@@ -18,10 +18,10 @@ html {
 }
 
 .poke-return-btn {
-  width: 6em;
+  width: 3em;
   border: 1px solid #111;
   padding: 0.5em 1em;
-  background-color: #aca6a671;
+  background-color: #aca6a68e;
   border-radius: 1em;
   margin: 1em 0 0 1em;
   color: #fff;
@@ -148,16 +148,16 @@ html {
 
 .poke-desc {
   white-space: normal;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .pokemon-ability {
   margin-left: 0.5em;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
-.pokemon-bionetric {
-  font-size: 1.1em;
+.pokemon-biometric {
+  font-size: 1em;
   margin-left: 0.5em;
 }
 
@@ -165,7 +165,6 @@ html {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1em;
 }
 
 .evo-arrow-container {
@@ -180,12 +179,15 @@ html {
 
 .stat-container {
   display: flex;
+  max-width: 22em;
   align-items: center;
   gap: 1em;
+  margin-top: 0.5em;
 }
 
 .stat-bar-container {
   width: 10em;
+  max-width: 14em;
   height: 0.3em;
   background-color: #7c7c7c;
   transition-property: width, background-color;
@@ -193,6 +195,7 @@ html {
 
 .stat-bar {
   height: 0.3em;
+  max-width: 14em;
   transition: 0.3s linear;
 }
 

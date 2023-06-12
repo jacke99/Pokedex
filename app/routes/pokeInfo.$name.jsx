@@ -5,15 +5,24 @@ import PokeInfoTop from "~/components/PokeInfoTop";
 import { fetchEvolutionChain, fetchPokemonInfo } from "~/service/fetchService";
 import styles from "~/styles/pokeInfo.css";
 
-export async function loader({ request }) {
-  const url = new URL(request.url);
-  const query = url.searchParams.get("q");
+export async function loader({ params }) {
+  const query = params.name;
   const pokeData = await fetchPokemonInfo(
     `https://pokeapi.co/api/v2/pokemon/${query}`
   );
+  if (!pokeData)
+    throw json(
+      { message: "Could not find the selected pokemon" },
+      { status: 404 }
+    );
+
   const data = await fetchEvolutionChain(pokeData.species.url);
-  if (!pokeData) throw new Response("", { status: 404 });
-  if (!data) throw new Response("", { status: 404 });
+  if (!data)
+    throw json(
+      { message: "Could not find the selected pokemons evolution chain" },
+      { status: 404 }
+    );
+
   const pokeEvoData = data.evoData;
   const speciesData = data.speciesData;
   return json({ pokeData, pokeEvoData, speciesData });

@@ -42,7 +42,11 @@ export default function PokemonEvolution({ pokemonEvo }) {
               </div>
 
               <div className="evo-arrow-container">
-                <p>lvl {evolveOne.evolution_details[0].min_level}</p>
+                {evolveOne.evolution_details[0].min_level ? (
+                  <p>lvl {evolveOne.evolution_details[0].min_level}</p>
+                ) : (
+                  ""
+                )}
                 <FontAwesomeIcon icon={faArrowRight} />
               </div>
 
@@ -66,7 +70,11 @@ export default function PokemonEvolution({ pokemonEvo }) {
               </div>
 
               <div className="evo-arrow-container">
-                <p>lvl {evolveTwo.evolution_details[0].min_level}</p>
+                {evolveTwo.evolution_details[0].min_level ? (
+                  <p>lvl {evolveTwo.evolution_details[0].min_level}</p>
+                ) : (
+                  ""
+                )}
                 <FontAwesomeIcon icon={faArrowRight} />
               </div>
 

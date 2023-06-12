@@ -39,9 +39,9 @@ export default function PokemonBaseInfo({ pokemon, speciesData }) {
           </div>
           <div className="biometrics-container">
             <h3 className="biometrics-title">Biometrics:</h3>
-            <p className="pokemon-bionetric">Height: {pokemon.height}</p>
-            <p className="pokemon-bionetric">Weight: {pokemon.weight}</p>
-            <p className="pokemon-bionetric">
+            <p className="pokemon-biometric">Height: {pokemon.height}</p>
+            <p className="pokemon-biometric">Weight: {pokemon.weight}</p>
+            <p className="pokemon-biometric">
               Base experiance: {pokemon.base_experience}
             </p>
           </div>

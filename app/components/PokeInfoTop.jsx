@@ -1,5 +1,7 @@
 import { useNavigate } from "@remix-run/react";
 import { capitalizeWord } from "~/service/capitalizeService";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function PokeInfoTop({ pokemon }) {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ export default function PokeInfoTop({ pokemon }) {
   return (
     <div className="poke-info-top">
       <button className="poke-return-btn" onClick={handleReturnClick}>
-        Return
+        <FontAwesomeIcon icon={faArrowLeft} />
       </button>
 
       <img

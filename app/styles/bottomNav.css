@@ -1,0 +1,27 @@
+.nav-bottom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(199, 194, 194);
+}
+
+.nav-list-bottom {
+  display: flex;
+  width: 12em;
+  height: 2.5em;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  font-size: 1.8em;
+}
+
+.nav-list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-list-text {
+  font-size: 0.8rem;
+}

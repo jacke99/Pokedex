@@ -6,7 +6,7 @@ export default function PokemonList({ pokeData }) {
 
   async function handlePokeClick(event) {
     const { value } = event.target.attributes.value;
-    navigate(`/pokeinfo/?q=${pokeData[value].name}`, {
+    navigate(`/pokeinfo/${pokeData[value].name}`, {
       state: { pokemon: pokeData[value] },
     });
   }

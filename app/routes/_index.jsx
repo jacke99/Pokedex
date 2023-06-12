@@ -49,7 +49,6 @@ export default function Index() {
     </div>
   );
 }
-
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
